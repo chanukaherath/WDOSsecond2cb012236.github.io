@@ -1,0 +1,371 @@
+/*navbar*/
+.navbar {
+    background-color: green;
+    overflow: hidden;
+    
+  }
+  
+  .navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 22px 30px;
+    text-decoration: none;
+    
+  }
+  
+  .navbar a:hover {
+    background-color: white;
+    color: black;
+  }
+
+  .home-button {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .navbar-text {
+    text-align: center;
+    font-size: 34px;
+    background-image:url(bookingimage/banner.jpg);
+    padding: 30px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: silver;
+    color: black;
+    font-weight: bold;
+  }
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: wheat;
+}
+
+.container {
+  max-width: 400px;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 20px;
+  background-color: gray;
+  margin-bottom: 15px;
+}
+
+form {
+  display: grid;
+  gap: 10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid silver;
+  border-radius: 3px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: green;
+  color: black;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: lightcoral;
+  cursor: not-allowed;
+}
+#userForm{
+  padding-right: 10px;
+}
+/*style for sum table*/
+#sum_table{
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: gray;
+    border: 14px;
+    border-color: white;
+    transition: 0.3s;
+    }
+    .classcon{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .class1{
+    flex: 1;
+    flex-basis: 0;
+    text-align: center;
+}
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+}
+.content1{
+  position: relative;
+  margin: 130px auto;
+  text-align: center;
+  padding: 0 20px;
+} 
+.content .text{
+  font-size: small;
+  font-weight: 600;
+  color: white;
+}
+.content p{
+  font-size:large;
+  font-weight: 600;
+  color: white;
+}
+footer{
+  bottom: 0px;
+  width: 100%;
+  background:black;
+}
+.main-content{
+  display: flex;
+}
+.main-content .box{
+  flex-basis: 50%;
+  padding: 10px 20px;
+}
+.box h2{
+  font-size: large;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.box .content{
+  margin: 20px 0 0 0;
+  position: relative;
+}
+.box .content:before{
+  position: absolute;
+  top: -10px;
+  height: 2px;
+  width: 100%;
+  background: blue;
+}
+.box .content:after{
+  position: absolute;
+  content: '';
+  height: 2px;
+  width: 15%;
+  background:white;
+  top: -10px;
+}
+.left .content p{
+  text-align: justify;
+}
+.left .content .social{
+  margin: 20px 0 0 0;
+}
+.left .content .social a{
+  padding: 0 2px;
+  float: left;
+}
+.fb{
+  color: white;
+  background-color: blue;
+  border-radius: 5px;
+}
+.twit{
+  color: white;
+  background-color: darkturquoise;
+  border-radius: 5px;
+}
+.insta{
+  color:white;
+  background-color: magenta;
+  border-radius: 5px;
+}
+.yt{
+  color: white;
+  background-color: red;
+  border-radius: 5px;
+}
+.left .content .social a span{
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+.fb :hover{
+  color: blue;
+  background-color: white;
+}
+.twit:hover{
+  color: darkturquoise;
+  background-color: white;
+}
+.insta:hover{
+  color:magenta;
+  background-color: white;
+}
+.yt:hover{
+  color:red;
+  background-color: white;
+}
+.center .content .fas{
+  font-size: large;
+  height: 45px;
+  width: 45px;
+  line-height: 45px;
+  text-align: center;
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+#loc{
+  color: white;
+  background-color: red;
+}
+#ph{
+  color: white;
+  background-color: green;
+}
+#em{
+  color: white;
+  background-color: red;
+}
+#loc:hover{
+  color: red;
+  background-color: white;
+}
+#ph:hover{
+  color: green;
+  background-color: white;
+}
+#em:hover{
+  color: red;
+  background-color: white;
+}
+.center .content .text{
+  font-size: large;
+  font-weight: 500;
+  padding-left: 10px;
+}
+.center .content .phone{
+  margin: 15px 0;
+}
+.right form .text{
+  font-size: large;
+  margin-bottom: 2px;
+  color:orangered ;
+}
+.right form .msg{
+  margin-top: 10px;
+}
+.right form input, .right form textarea{
+  width: 100%;
+  font-size: small;
+  background: darkslategray;
+  padding-left: 10px;
+  border: 1px blue;
+  color: white;
+}
+.right form input:focus,
+.right form textarea:focus{
+  outline-color: red;
+}
+.right form input{
+  height: 35px;
+}
+.right form .btn{
+  margin-top: 10px;
+}
+.right form .btn button{
+  height: 40px;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: orangered;
+  font-size: large;
+  font-weight: 500;
+  cursor: pointer;
+  transition: .3s;
+}
+.right form .btn button:hover{
+  background: greenyellow;
+}
+.bottom center{
+  padding: 5px;
+  font-size: large;
+  background:slategrey;
+}
+.bottom center span{
+  color:black;
+}
+.bottom center a{
+  color: blue;
+  text-decoration: none;
+}
+.bottom center a:hover{
+  text-decoration: underline;
+}
+h2{
+  color: skyblue;
+}
+
+   
+@media screen and (max-width: 900px) {
+    footer{
+      position: relative;
+      bottom: 0px;
+    }
+    .content1 {
+      margin: 80px auto;
+    }
+  
+    .content1 .text {
+      font-size: 2rem;
+    }
+  
+    .content1 .p {
+      font-size: 1.75rem;
+    }
+  
+    .main-content {
+      flex-direction: column;
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+  
+    .main-content .box {
+      margin: 10px 0;
+    }
+    .classcon{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .class1{
+      flex: 1;
+      flex-basis: 0;
+      text-align: center;
+  }
+}

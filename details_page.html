@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="details_page.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <title>Details</title>
+</head>
+<body>
+<!--Navigation Bar-->
+<div class="navbar-text">Buy Tickets</div>
+
+<div class="navbar">
+  <a class="home-button" href="home.html">Home</a>
+  <a href="booking_page.html">Tickets</a>
+  <a href="#">Details</a>
+  <a href="#">Payment</a>
+  <a href="#">Confirmation</a>
+</div>
+
+<!--rest-->
+<div class="classcon">
+<div class="class1">
+    <div class="container">
+        <form id="userForm">
+          <label for="fullName">Full Name *</label>
+          <input type="text" id="fullName" name="fullName" required>
+    
+          <label for="mobileNumber">Mobile Number *</label>
+          <select id="countryCode" name="countryCode" required>
+            <option value="us">+1 (US)</option>
+            <option value="uk">+44 (UK)</option>
+            <option value="ca">+1 (Canada)</option>
+            <option value="au">+61 (Australia)</option>
+            <option value="de">+49 (Germany)</option>
+            <option value="fr">+33 (France)</option>
+            <option value="jp">+81 (Japan)</option>
+            <option value="in">+91 (India)</option>
+            <option value="cn">+86 (China)</option>
+            <option value="br">+55 (Brazil)</option>
+            <option value="mx">+52 (Mexico)</option>
+            <option value="sa">+966 (Saudi Arabia)</option>
+            <option value="za">+27 (South Africa)</option>
+            <option value="lk">+94 (Sri Lanka)</option>
+            <!-- Add more country options here -->
+          </select>
+          <input type="text" id="mobileNumber" name="mobileNumber" required>
+    
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
+    
+          <label for="confirmEmail">Confirm Email *</label>
+          <input type="email" id="confirmEmail" name="confirmEmail" required>
+    
+          <label for="gender">Gender</label>
+          <select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+    
+          <button type="button"  id="continueButton"  disabled>Continue with purchase</button>
+        </form>
+      </div>
+      </div>
+
+<div class="class1">
+<!--sum table-->
+<div class="part1">
+  <div class="summary">
+      <h1>Summary Table</h1>
+      <table border="1" id="sum_table">
+          <tr>
+              <th>Field</th>
+              <th>User Details</th>
+          </tr>
+          <tr>
+              <td>Date of Arrival</td>
+              <td id="arriving_date_value"></td>
+          </tr>
+          <tr>
+              <td>Time Duration Reserved</td>
+              <td id="stay_duration_value"></td>
+          </tr>
+          <tr>
+              <td>Time Slots Reserved</td>
+              <td id="time_slots_value"></td>
+          </tr>
+          <tr>
+              <td>Sri Lankan Adults</td>
+              <td id="sl_adults_value"></td>
+          </tr>
+          <tr>
+              <td>Sri Lankan Children</td>
+              <td id="sl_child_value"></td>
+          </tr>
+          <tr>
+              <td>Foreigner Adults</td>
+              <td id="fr_adults_value"></td>
+          </tr>
+          <tr>
+              <td>Foreigner Children</td>
+              <td id="fr_child_value"></td>
+          </tr>
+          <tr>
+              <td>Infants</td>
+              <td id="infant_value"></td>
+          </tr>
+          <tr>
+              <td>Total Price</td>
+              <td id="total_price_value"></td>
+          </tr>
+      </table>
+  </div>
+  </div>
+  </div>
+  </div>
+
+
+   <script>
+    const userForm = document.getElementById('userForm');
+    const continueButton = document.getElementById('continueButton');
+    
+    // Function to save specific form data to local storage
+    function saveFormData() {
+      const formData = new FormData(userForm);
+      const userData = {
+        fullName: formData.get('fullName'),
+        mobileNumber: formData.get('mobileNumber'),
+        email: formData.get('email'),
+        gender: formData.get('gender')
+      };
+    
+      localStorage.setItem('userData', JSON.stringify(userData));
+    }
+    
+    // Function to display stored data in the form
+    function displayStoredData() {
+      const storedUserData = localStorage.getItem('userData');
+  if (storedUserData) {
+    const userData = JSON.parse(storedUserData);
+
+    document.getElementById('nameValue').textContent = userData.fullName;
+    document.getElementById('mobileNumber').textContent = userData.mobileNumber;
+    document.getElementById('email').textContent = userData.email;
+    document.getElementById('gender').textContent = userData.gender;
+  }
+    }
+    
+    // Load stored data when the page is loaded
+    displayStoredData();
+    
+    userForm.addEventListener('input', () => {
+      const isValid = userForm.checkValidity();
+      continueButton.disabled = !isValid;
+    });
+    
+    userForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+    
+      // Save specific form data to local storage
+      saveFormData();
+    
+      // Redirect to the payment page
+      window.location.href = "payment_page.html";
+    });
+    
+    document.getElementById("continueButton").addEventListener("click", function() {
+      // You can redirect the user to the next page or perform other actions here
+      
+      window.location.href = "payment_page.html";
+    });
+    
+
+    // sum table
+    document.getElementById("arriving_date_value").textContent = localStorage.getItem("arrivingDate");
+    document.getElementById("stay_duration_value").textContent = localStorage.getItem("stayDuration");
+    document.getElementById("time_slots_value").textContent = JSON.parse(localStorage.getItem("timeSlotArray")).join(", ");
+    document.getElementById("sl_adults_value").textContent = localStorage.getItem("SL Adults");
+    document.getElementById("sl_child_value").textContent = localStorage.getItem("SL Child");
+    document.getElementById("fr_adults_value").textContent = localStorage.getItem("Foreigner Adult");
+    document.getElementById("fr_child_value").textContent = localStorage.getItem("Foreigner Child");
+    document.getElementById("infant_value").textContent = localStorage.getItem("Infant");
+    
+    // Calculate and display the total price
+    var totalPrice = localStorage.getItem("totalPrice");
+    document.getElementById("total_price_value").textContent = "$" + totalPrice;
+ </script>
+ 
+ <footer>
+  <div class="main-content">
+      <div class="left box">
+        <h2>About us</h2>
+        <div class="content">
+          <p>From rehabilitation of injured sea turtles to providing a safe nesting ground, the sea turtle hatchery in Sri Lanka aims at protecting and saving the sea turtles that visit the golden shores of the island.</p>
+          <div class="social">
+            <a href="https://www.facebook.com/hikkaduwa.srilanka/" target="_blank"><div class="fb"><span class="fab fa-facebook-f"></span></div></a>
+            <a href="#" target="_blank"><div class="twit"><span class="fab fa-twitter"></span></div></a>
+            <a href="#"target="_blank"><div class="insta"><span class="fab fa-instagram"></span></div></a>
+            <a href="#" target="_blank"><div class="yt"><span class="fab fa-youtube"></span></div></a>
+          </div>
+        </div>
+      </div>
+      <div class="center box">
+        <h2>Address</h2>
+        <div class="content">
+          <div class="place">
+            <a href="https://goo.gl/maps/vpgTSLjT9Xscmrum6" target="_blank"><span id="loc" class="fas fa-map-marker-alt"></span></a>
+            <span class="text">Hikkaduwa</span>
+          </div>
+          <div class="phone">
+            <a href="#" target="_blank"><span id="ph" class="fas fa-phone-alt"></span></a>
+            <span class="text">+094 123456789</span>
+          </div>
+          <div class="email">
+            <a href="#" target="_blank"><span id="em" class="fas fa-envelope"></span></a>
+            <span class="text">hikkaduwaturtlehatchery.gmail.com</span>
+          </div>
+        </div>
+      </div>
+      <div class="right box">
+        <h2>Contact us</h2>
+        <div class="content">
+          <form action="#">
+            <div class="email">
+              <div class="text">Your email</div>
+              <input type="email" required>
+            </div>
+            <div class="msg">
+              <div class="text">Comment us</div>
+              <textarea rows="2" cols="25" required></textarea>
+            </div>
+            <div class="btn">
+              <button type="submit">Send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <center>
+        <span class="credit">Created By <a href="#">Chanuka Herath</a> |</span>
+        <span class="far fa-copyright"></span><span> 2023 All rights reserved.</span>
+      </center>
+    </div>
+</footer>
+<style>
+
+</style>
+</body>
+</html>

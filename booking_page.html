@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Turtle Conservation Project-Booking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">            
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" type="text/css" href="booking_page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ee8e74c256.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<!--navbar-->
+<div class="navbar-text">Buy Tickets</div>
+
+<div class="navbar">
+  <a class="home-button" href="home.html">Home</a>
+  <a href="#">Tickets</a>
+  <a href="#">Details</a>
+  <a href="#">Payment</a>
+  <a href="#">Confirmation</a>
+</div>
+     <style>
+    
+     </style>
+
+<!--Price Table-->
+
+
+    <p id="entrance">**Entrance is  free for the Local and Foreign infants under the age of 4 years.</p> 
+<table id="charge_table" border="1">
+<tr>
+    <th>
+        Guest
+    </th>
+    <th>
+        Normal hours
+    </th>
+    <th>
+        Peak hours
+    </th>
+</tr>
+<tr>
+    <th>
+        SL Adult
+    </th>
+    <th>
+        4 USD
+    </th>
+    <th>
+        6 USD
+    </th>
+</tr>
+<tr>
+    <th>
+SL Child
+    </th>
+    <th>
+2 USD
+    </th>
+    <th>
+3 USD
+    </th>
+</tr>
+<tr>
+    <th>
+Foreigner Adult
+    </th>
+    <th>
+10 USD
+    </th>
+    <th>
+      13 USD  
+    </th>
+</tr>
+<tr>
+    <th>
+Foreigner Child
+    </th>
+    <th>
+5 USD
+    </th>
+    <th>
+     8 USD   
+    </th>
+</tr>
+</table>
+
+<!--Form 1-->
+<div class="part_container">
+<div class="part1">
+<section class="form1">
+    <h1 id="titles">Reserve your date</h1>
+    <div class="form-p">
+        <div class="form-in">
+            <input type="date" id="arriving_date" name="arriving_date" >
+            <!--Time selection-->
+            <h1>Reserve your Time</h1>
+            <p id="slots_P">**Please select the time slots in a row</p>
+            <select id="time_slots" name="time_slots" size="4" multiple>
+                <option value="07.00 am - 08.00 am">07.00 am - 08.00 am</option>
+                <option value="08.00 am - 09.00 am"> 08.00 am - 09.00 am</option>
+                <option value="09.00 am - 10.00 am"> 09.00 am - 10.00 am</option>
+                <option value="10.00 am - 11.00 am"> 10.00 am - 11.00 am (Peak Hour)</option>
+                <option value="11.00 am - 12.00 pm"> 11.00 am - 12.00 pm (Peak Hour)</option>
+                <option value="12.00 pm - 01.00 pm"> 12.00 pm - 01.00 pm (Peak Hour)</option>
+                <option value="01.00 pm - 02.00 pm"> 01.00 pm - 02.00 pm</option>
+                <option value="02.00 pm - 03.00 pm"> 02.00 pm - 03.00 pm</option>
+                <option value="03.00 pm - 04.00 pm"> 03.00 pm - 04.00 pm (Peak Hour)</option>
+                <option value="04.00 pm - 05.00 pm"> 04.00 pm - 05.00 pm (Peak Hour)</option>
+                <option value="05.00 pm - 06.00 pm"> 05.00 pm - 06.00 pm (Peak Hour)</option>
+            </select>
+            <!--Increment-->
+            <h1>Guests(How many of you will be there?)</h1>
+            <div class="number-input-box">
+                <div class="number-input">
+                    <label for="sl_adults">SL Adults</label>
+                    <div class="flex">
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus">-</button>
+                        <input class="quantity" form="booking" min="0" placeholder="0" type="number" id="sl_adults" name="sl_adults">
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
+                    </div>  
+                </div>                               
+                <div class="number-input">
+                    <label for="sl_child"> SL Child</label>
+                    <div class="flex">
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus">-</button>
+                        <input class="quantity" form="booking" min="0" placeholder="0" type="number" id="sl_child" name="sl_child">
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
+                    </div>
+                </div> 
+                <div class="number-input">
+                    <label for="fr_adults">Foreigner Adult</label>
+                    <div class="flex">
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus">-</button>
+                        <input class="quantity" form="booking" min="0" name="fr_adults" placeholder="0" type="number" id="fr_adults">
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
+                    </div>
+                </div>             
+                <div class="number-input">
+                    <label for="fr_child">	Foreigner Child</label>
+                    <div class="flex">
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus">-</button>
+                        <input class="quantity" form="booking" min="0" name="fr_child" placeholder="0" type="number" id="fr_child">
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
+                    </div>
+                </div>           
+                <div class="number-input">
+                    <label for="infant">Infant</label>
+                    <div class="flex">
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus">-</button>
+                        <input class="quantity" form="booking" min="0" name="infant" placeholder="0" type="number" id="infant">
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
+                    </div>
+                </div>                        
+            </div>
+        </div>
+        <div class="submit_form">
+            <button id="button1" type="button" onclick="storageFunction() ";
+                 style="font-size: larger; cursor: pointer; border-radius: 10px; padding-top: 5px; padding-bottom: 5px; padding-left: 15px; padding-right: 15px; width: 20%; height: 7%;">
+                Continue
+            </button>
+        </div>
+    </div>
+</section>
+</div>
+
+<!--JavaScript for Form and Local storage-->
+
+<script type="text/javascript">
+
+
+
+
+
+
+    function storageFunction() {
+    var inputDate = document.getElementById("arriving_date").value;
+    localStorage.setItem("arrivingDate", inputDate);
+
+    var inputSLAdults = document.getElementById("sl_adults").value;
+    localStorage.setItem("SL Adults", inputSLAdults);
+    var inputSLChild = document.getElementById("sl_child").value;
+    localStorage.setItem("SL Child", inputSLChild);
+    var inputFRAdults = document.getElementById("fr_adults").value;
+    localStorage.setItem("Foreigner Adult", inputFRAdults);
+    var inputFRChild = document.getElementById("fr_child").value;
+    localStorage.setItem("Foreigner Child", inputFRChild);
+    var inputInfant = document.getElementById("infant").value;
+    localStorage.setItem("Infant", inputInfant);
+
+    var selected = [];
+    var options = document.getElementById("time_slots").options;
+    localStorage.duration = 0;
+    for (var i = 0; i < options.length; i++) {
+        if (options[i].selected) {
+            selected.push(options[i].value);
+            localStorage.duration = Number(localStorage.duration) + 1;
+        }
+    }
+    localStorage.setItem("stayDuration", localStorage.duration);
+    localStorage.setItem("timeSlotArray", JSON.stringify(selected));
+
+    // Calculate the total price
+    var totalSLAdults = inputSLAdults * (selected.indexOf("10.00 am - 11.00 am (Peak Hour)") !== -1 ? 6 : 4);
+    var totalSLChild = inputSLChild * (selected.indexOf("10.00 am - 11.00 am (Peak Hour)") !== -1 ? 3 : 2);
+    var totalFRAdults = inputFRAdults * (selected.indexOf("10.00 am - 11.00 am (Peak Hour)") !== -1 ? 13 : 10);
+    var totalFRChild = inputFRChild * (selected.indexOf("10.00 am - 11.00 am (Peak Hour)") !== -1 ? 8 : 5);
+    var totalInfant = 0; // Infants are free
+    var totalPrice = totalSLAdults + totalSLChild + totalFRAdults + totalFRChild + totalInfant;
+
+    // Store the total price in localStorage
+    localStorage.setItem("totalPrice", totalPrice);
+
+    // Redirect to details.html after storing data in local storage
+    window.location.href = "details_page.html";
+}
+
+
+
+
+
+</script>
+
+<!--Summary Table-->
+<div class="part1">
+<div class="summary">
+    <h1>Summary Table</h1>
+    <table border="1" id="sum_table">
+        <tr>
+            <th>Field</th>
+            <th>User Details</th>
+        </tr>
+        <tr>
+            <td>Date of Arrival</td>
+            <td id="arriving_date_value"></td>
+        </tr>
+        <tr>
+            <td>Time Duration Reserved</td>
+            <td id="stay_duration_value"></td>
+        </tr>
+        <tr>
+            <td>Time Slots Reserved</td>
+            <td id="time_slots_value"></td>
+        </tr>
+        <tr>
+            <td>Sri Lankan Adults</td>
+            <td id="sl_adults_value"></td>
+        </tr>
+        <tr>
+            <td>Sri Lankan Children</td>
+            <td id="sl_child_value"></td>
+        </tr>
+        <tr>
+            <td>Foreigner Adults</td>
+            <td id="fr_adults_value"></td>
+        </tr>
+        <tr>
+            <td>Foreigner Children</td>
+            <td id="fr_child_value"></td>
+        </tr>
+        <tr>
+            <td>Infants</td>
+            <td id="infant_value"></td>
+        </tr>
+        <tr>
+            <td>Total Price</td>
+            <td id="total_price_value"></td>
+        </tr>
+    </table>
+</div>
+</div>
+</div>
+<!--JavaScript for Summary Table-->
+
+<script>
+    // Retrieve data from local storage and display in the table
+    document.getElementById("arriving_date_value").textContent = localStorage.getItem("arrivingDate");
+    document.getElementById("stay_duration_value").textContent = localStorage.getItem("stayDuration");
+    document.getElementById("time_slots_value").textContent = JSON.parse(localStorage.getItem("timeSlotArray")).join(", ");
+    document.getElementById("sl_adults_value").textContent = localStorage.getItem("SL Adults");
+    document.getElementById("sl_child_value").textContent = localStorage.getItem("SL Child");
+    document.getElementById("fr_adults_value").textContent = localStorage.getItem("Foreigner Adult");
+    document.getElementById("fr_child_value").textContent = localStorage.getItem("Foreigner Child");
+    document.getElementById("infant_value").textContent = localStorage.getItem("Infant");
+    
+    // Display the total price from local storage
+    var totalPrice = localStorage.getItem("totalPrice");
+    document.getElementById("total_price_value").textContent = "$" + totalPrice;
+</script>
+
+<footer>
+    <div class="main-content">
+        <div class="left box">
+          <h2>About us</h2>
+          <div class="content">
+            <p>From rehabilitation of injured sea turtles to providing a safe nesting ground, the sea turtle hatchery in Sri Lanka aims at protecting and saving the sea turtles that visit the golden shores of the island.</p>
+            <div class="social">
+              <a href="https://www.facebook.com/hikkaduwa.srilanka/" target="_blank"><div class="fb"><span class="fab fa-facebook-f"></span></div></a>
+              <a href="#" target="_blank"><div class="twit"><span class="fab fa-twitter"></span></div></a>
+              <a href="#"target="_blank"><div class="insta"><span class="fab fa-instagram"></span></div></a>
+              <a href="#" target="_blank"><div class="yt"><span class="fab fa-youtube"></span></div></a>
+            </div>
+          </div>
+        </div>
+        <div class="center box">
+          <h2>Address</h2>
+          <div class="content">
+            <div class="place">
+              <a href="https://goo.gl/maps/vpgTSLjT9Xscmrum6" target="_blank"><span id="loc" class="fas fa-map-marker-alt"></span></a>
+              <span class="text">Hikkaduwa</span>
+            </div>
+            <div class="phone">
+              <a href="#" target="_blank"><span id="ph" class="fas fa-phone-alt"></span></a>
+              <span class="text">+094 123456789</span>
+            </div>
+            <div class="email">
+              <a href="#" target="_blank"><span id="em" class="fas fa-envelope"></span></a>
+              <span class="text">hikkaduwaturtlehatchery.gmail.com</span>
+            </div>
+          </div>
+        </div>
+        <div class="right box">
+          <h2>Contact us</h2>
+          <div class="content">
+            <form action="#">
+              <div class="email">
+                <div class="text">Your email</div>
+                <input type="email" required>
+              </div>
+              <div class="msg">
+                <div class="text">Comment us</div>
+                <textarea rows="2" cols="25" required></textarea>
+              </div>
+              <div class="btn">
+                <button type="submit">Send</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <center>
+          <span class="credit">Created By <a href="#">Chanuka Herath</a> |</span>
+          <span class="far fa-copyright"></span><span> 2023 All rights reserved.</span>
+        </center>
+      </div>
+</footer>
+<!--styles for footer-->
+<style>
+
+
+</style>
+</body>
+</html>

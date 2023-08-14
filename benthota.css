@@ -1,0 +1,257 @@
+#bh1{
+  text-align: center;
+  color: white;
+  font-family:'Trebuchet MS';
+  margin-top: 100px;
+  font-size:60px;
+  background-color: darkred;
+  margin-bottom: 10px;
+}
+#imagekb{
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+  border-radius: 20px;
+  background-color: black;
+}
+body{
+  background-image: url('images/deep.jpg');
+  background-size: cover;
+  background-position:center;
+  background-attachment: fixed;
+}
+#para1{
+  margin: 10px;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  border-radius: 15px;
+  font-family: Arial;
+  font-size: 20px;
+  transition: 0.3s;
+}
+#para1:hover{
+  transform: scale(1.05);
+  margin: 50px;
+  background-color: white;
+  color: black;
+}
+.otherimages{
+  margin: 15px;
+  padding: 10px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: darkblue;
+  transition: 0.3s;
+}
+.otherimages:hover{
+  background-color: white;
+  transform: scale(1.1);
+}
+#otherim{
+  width: 600px;
+}
+.media{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: dimgrey;
+  transition: 0.3s;
+}
+.media:hover{
+  background-color: black;
+}
+#mediaim{
+  width: 600px;
+}
+#para2{
+font-size: 23px;
+margin: 10px;
+padding: 20px;
+background-color: black;
+color: white;
+}
+#para2:hover{
+  background-color: white;
+  color: black;
+}
+.last{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.para3{
+  width: 600px;
+  font-size: 23px;
+  padding: 15px;
+  background-color: white;
+  transition: 0.3s;
+}
+.para3:hover{
+background-color: black;
+color: white;
+border-radius: 15px;
+transform: scale(1.1);
+}
+#button1{
+  margin-right: 10%;
+  width: 40%;
+  font-family: 'Trebuchet MS';
+  margin-left: 50%;
+  padding: 15px;
+  font-size: 30px;
+  background-color: yellow;
+  border-radius: 15px;
+  transition: 0.3s;
+  margin-bottom: 10px;
+}
+#button1:hover{
+  transform: scale(1.2);
+}
+.travel{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 20px;
+  background-color: black;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#madura{
+  width: 600px;
+  height: 400px;
+}
+iframe{
+  width: 600px;
+  height: 400px;
+  
+}
+@media screen and (max-width: 900px){
+  #bh1{
+  margin-top: 210px;
+  }
+  #para1{
+    margin: 10px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    font-family: Arial;
+    font-size: 20px;
+    transition: none;
+  }
+  #para1:hover{
+    transform: none;
+    margin: 10px;
+    background-color: black;
+    color: white;
+  }
+  .otherimages{
+    margin: 15px;
+    padding: 10px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: darkblue;
+    transition: none;
+  }
+  .otherimages:hover{
+    background-color:darkblue;
+    transform:none;
+  }
+  #otherim{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  #para2{
+    font-size: 23px;
+    margin: 10px;
+    padding: 20px;
+    background-color: black;
+    color: white;
+    }
+    #para2:hover{
+      background-color:black;
+      color: white;
+    }
+    .media{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      background-color: black;
+      transition: none;
+    }
+    .media:hover{
+      background-color: black;
+    }
+    #mediaim{
+      width: 80%;
+      margin-left: 10%;
+      margin-right: 10%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+}
+.last{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 10px;
+  align-items: center;
+}
+.para3{
+  width: 400px;
+  font-size: 23px;
+  padding: 15px;
+  background-color: black;
+  color: white;
+  transition: none;
+  text-align: center;
+  margin-top: 10px;
+}
+.para3:hover{
+background-color: black;
+color: white;
+border-radius: 0;
+transform: none;
+}
+.travel{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 20px;
+  background-color: black;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  gap: 10px;
+  align-items: center;
+}
+#madura{
+  width: 400px;
+  height: 300px;
+}
+iframe{
+  width: 400px;
+  height: 300px;
+  
+}
+#button1{
+  margin-right: 10%;
+  width: 40%;
+  font-family: 'Trebuchet MS';
+  margin-left: 50%;
+  padding: 15px;
+  font-size: 30px;
+  background-color: yellow;
+  border-radius: 15px;
+  transition: none;
+  margin-bottom: 10px;
+}
+#button1:hover{
+  transform: none;
+  background-color: red;
+}
+}

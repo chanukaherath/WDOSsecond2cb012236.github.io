@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+}
+.content1{
+  position: relative;
+  margin: 130px auto;
+  text-align: center;
+  padding: 0 20px;
+} 
+.content .text{
+  font-size: small;
+  font-weight: 600;
+  color: white;
+}
+.content p{
+  font-size:large;
+  font-weight: 600;
+  color: white;
+}
+footer{
+  bottom: 0px;
+  width: 100%;
+  background:black;
+}
+.main-content{
+  display: flex;
+}
+.main-content .box{
+  flex-basis: 50%;
+  padding: 10px 20px;
+}
+.box h2{
+  font-size: large;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.box .content{
+  margin: 20px 0 0 0;
+  position: relative;
+}
+.box .content:before{
+  position: absolute;
+  top: -10px;
+  height: 2px;
+  width: 100%;
+  background: blue;
+}
+.box .content:after{
+  position: absolute;
+  content: '';
+  height: 2px;
+  width: 15%;
+  background:white;
+  top: -10px;
+}
+.left .content p{
+  text-align: justify;
+}
+.left .content .social{
+  margin: 20px 0 0 0;
+}
+.left .content .social a{
+  padding: 0 2px;
+  float: left;
+}
+.fb{
+  color: white;
+  background-color: blue;
+  border-radius: 5px;
+}
+.twit{
+  color: white;
+  background-color: darkturquoise;
+  border-radius: 5px;
+}
+.insta{
+  color:white;
+  background-color: magenta;
+  border-radius: 5px;
+}
+.yt{
+  color: white;
+  background-color: red;
+  border-radius: 5px;
+}
+.left .content .social a span{
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+.fb :hover{
+  color: blue;
+  background-color: white;
+}
+.twit:hover{
+  color: darkturquoise;
+  background-color: white;
+}
+.insta:hover{
+  color:magenta;
+  background-color: white;
+}
+.yt:hover{
+  color:red;
+  background-color: white;
+}
+.center .content .fas{
+  font-size: large;
+  height: 45px;
+  width: 45px;
+  line-height: 45px;
+  text-align: center;
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+#loc{
+  color: white;
+  background-color: red;
+}
+#ph{
+  color: white;
+  background-color: green;
+}
+#em{
+  color: white;
+  background-color: red;
+}
+#loc:hover{
+  color: red;
+  background-color: white;
+}
+#ph:hover{
+  color: green;
+  background-color: white;
+}
+#em:hover{
+  color: red;
+  background-color: white;
+}
+.center .content .text{
+  font-size: large;
+  font-weight: 500;
+  padding-left: 10px;
+}
+.center .content .phone{
+  margin: 15px 0;
+}
+.right form .text{
+  font-size: large;
+  margin-bottom: 2px;
+  color:orangered ;
+}
+.right form .msg{
+  margin-top: 10px;
+}
+.right form input, .right form textarea{
+  width: 100%;
+  font-size: small;
+  background: darkslategray;
+  padding-left: 10px;
+  border: 1px blue;
+  color: white;
+}
+.right form input:focus,
+.right form textarea:focus{
+  outline-color: red;
+}
+.right form input{
+  height: 35px;
+}
+.right form .btn{
+  margin-top: 10px;
+}
+.right form .btn button{
+  height: 40px;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: orangered;
+  font-size: large;
+  font-weight: 500;
+  cursor: pointer;
+  transition: .3s;
+}
+.right form .btn button:hover{
+  background: greenyellow;
+}
+.bottom center{
+  padding: 5px;
+  font-size: large;
+  background:slategrey;
+}
+.bottom center span{
+  color:black;
+}
+.bottom center a{
+  color: blue;
+  text-decoration: none;
+}
+.bottom center a:hover{
+  text-decoration: underline;
+}
+h2{
+  color: skyblue;
+}
+.nevbar-container{
+  display: flex;
+  justify-content: center;
+}
+.navbar {
+  background-image: url(images/navbar.jpg);
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+  background-position: center;
+  z-index: 9999;
+  
+}
+.navbar a{
+  float: left;
+  color:black;
+  text-align: center;
+  padding: 30px 20px;
+  text-decoration:none;
+  font-size: 20px;
+  transition: 0.2s;
+}
+.navbar a:hover {
+  background-color:aquamarine;
+  color:black;
+  transform: scale(1.1);
+}
+.navbar a.active {
+  background-color:black;
+  color: white;
+}
+@media screen and (max-width: 900px) {
+    footer{
+      position: relative;
+      bottom: 0px;
+    }
+    .content1 {
+      margin: 80px auto;
+    }
+  
+    .content1 .text {
+      font-size: 2rem;
+    }
+  
+    .content1 .p {
+      font-size: 1.75rem;
+    }
+  
+    .main-content {
+      flex-direction: column;
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+  
+    .main-content .box {
+      margin: 10px 0;
+    }
+    .navbar {
+      position: static;
+      background-image: none;
+      color:black;
+      text-align: center;
+      background-image: url('images/navbar.jpg');
+      top: 0;
+      left:0;
+      right: 0;
+      overflow: hidden;
+      background-position: center;
+      z-index: 9999;
+      position: fixed;
+    }
+    .navbar a {
+      display: block;
+      float: none;
+      padding:7px;
+      font-size: 18px;
+      color:black;
+      text-align: center;
+      transition: none;
+    }
+    .navbar a:hover {
+      transform: none;
+    }
+    h1{
+      margin-top: 160px;
+    }
+    
+  }

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="payment_page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <title>Payment Page- Form</title>
+</head>
+<body>
+<!--Navigation Bar-->
+<div class="navbar-text">Buy Tickets</div>
+
+<div class="navbar">
+  <a class="home-button" href="#">Home</a>
+  <a href="booking_page.html">Tickets</a>
+  <a href="details_page.html">Details</a>
+  <a href="#">Payment</a>
+  <a href="#">Confirmation</a>
+</div>
+
+<!--sum table-->
+<div class="classcon">
+  <div class="class1">
+    <div class="log">
+        <div class="container">
+            <h1>Proceed to Payment</h1>
+            <div class="first-row">
+                <div class="owner">
+                    <h3>Name*</h3>
+                    <div class="input-field">
+                        <input type="text" id="nameValue" >
+                    </div>
+                </div>
+                <div class="cvv">
+                    <h3>CVC/CVV*</h3>
+                    <div class="input-field">
+                        <input type="password">
+                    </div>
+                </div>
+            </div>
+            <div class="second-row">
+                <div class="card-number">
+                    <h3>Card Number*</h3>
+                    <div class="input-field">
+                        <input type="text" >
+                    </div>
+                </div>
+            </div>
+            <div class="third-row">
+                <h3>Expiry Date*</h3>
+                <div class="selection">
+                    <div class="date">
+                        <select name="months" id="months">
+                            <option value="Jan">Jan</option>
+                            <option value="Feb">Feb</option>
+                            <option value="Mar">Mar</option>
+                            <option value="Apr">Apr</option>
+                            <option value="May">May</option>
+                            <option value="Jun">Jun</option>
+                            <option value="Jul">Jul</option>
+                            <option value="Aug">Aug</option>
+                            <option value="Sep">Sep</option>
+                            <option value="Oct">Oct</option>
+                            <option value="Nov">Nov</option>
+                            <option value="Dec">Dec</option>
+                          </select>
+                          <select name="years" id="years">
+                            <option value="2028">2028</option>
+                            <option value="2027">2027</option>
+                            <option value="2026">2026</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                          </select>
+                    </div>
+                    <div class="cards">
+                        <img src="bookingimage/master.png" alt="mastercard_logo">
+                        <img src="bookingimage/paypal.png" alt="paypal_logo">
+                        <img src="bookingimage/visa.png" alt="visa_logo">
+                    </div>
+                </div>    
+            </div>
+            <a id="con" >Confirm</a>
+        </div>
+        </div>
+        </div>
+
+
+
+
+
+<div class="class1">
+  <div class="summary">
+      <h1>Summary Table</h1>
+      <table border="1" id="sum_table">
+          <tr>
+              <th>Field</th>
+              <th>User Details</th>
+          </tr>
+          <tr>
+              <td>Date of Arrival</td>
+              <td id="arriving_date_value"></td>
+          </tr>
+          <tr>
+              <td>Time Duration Reserved</td>
+              <td id="stay_duration_value"></td>
+          </tr>
+          <tr>
+              <td>Time Slots Reserved</td>
+              <td id="time_slots_value"></td>
+          </tr>
+          <tr>
+              <td>Sri Lankan Adults</td>
+              <td id="sl_adults_value"></td>
+          </tr>
+          <tr>
+              <td>Sri Lankan Children</td>
+              <td id="sl_child_value"></td>
+          </tr>
+          <tr>
+              <td>Foreigner Adults</td>
+              <td id="fr_adults_value"></td>
+          </tr>
+          <tr>
+              <td>Foreigner Children</td>
+              <td id="fr_child_value"></td>
+          </tr>
+          <tr>
+              <td>Infants</td>
+              <td id="infant_value"></td>
+          </tr>
+          <tr>
+              <td>Total Price</td>
+              <td id="total_price_value"></td>
+          </tr>
+      </table>
+  </div>
+  </div>
+</div>
+<style>
+
+</style>
+
+
+    <script>
+        
+        document.addEventListener("DOMContentLoaded", function() {
+    const ownerInput = document.querySelector(".owner input");
+    const cvvInput = document.querySelector(".cvv input");
+    const cardNumberInput = document.querySelector(".card-number input");
+    const monthsSelect = document.getElementById("months");
+    const yearsSelect = document.getElementById("years");
+    const confirmButton = document.getElementById("con");
+
+    const validateForm = () => {
+        const owner = ownerInput.value.trim();
+        const cvv = cvvInput.value.trim();
+        const cardNumber = cardNumberInput.value.trim();
+        const selectedMonth = monthsSelect.value;
+        const selectedYear = yearsSelect.value;
+
+        // Perform validation checks here
+        const isValid = owner !== "" && cvv !== "" && cardNumber !== "" && selectedMonth !== "" && selectedYear !== "";
+
+        return isValid;
+    };
+
+    const updateButtonStatus = () => {
+        confirmButton.disabled = !validateForm();
+    };
+
+    // Attach event listeners to input fields and selects
+    ownerInput.addEventListener("input", updateButtonStatus);
+    cvvInput.addEventListener("input", updateButtonStatus);
+    cardNumberInput.addEventListener("input", updateButtonStatus);
+    monthsSelect.addEventListener("change", updateButtonStatus);
+    yearsSelect.addEventListener("change", updateButtonStatus);
+
+    confirmButton.addEventListener("click", function(event) {
+        if (!validateForm()) {
+            event.preventDefault();
+            alert("Please fill out all the required fields.");
+        } else {
+            // Save form data to local storage
+            const formData = {
+                owner: ownerInput.value,
+                cvv: cvvInput.value,
+                cardNumber: cardNumberInput.value,
+                selectedMonth: monthsSelect.value,
+                selectedYear: yearsSelect.value
+            };
+            localStorage.setItem("paymentData", JSON.stringify(formData));
+
+            // Redirect to another page
+            window.location.href = "confirmation_page.html";
+        }
+    });
+
+    // Initialize button status
+    updateButtonStatus();
+});
+
+    // sum table
+    document.getElementById("arriving_date_value").textContent = localStorage.getItem("arrivingDate");
+    document.getElementById("stay_duration_value").textContent = localStorage.getItem("stayDuration");
+    document.getElementById("time_slots_value").textContent = JSON.parse(localStorage.getItem("timeSlotArray")).join(", ");
+    document.getElementById("sl_adults_value").textContent = localStorage.getItem("SL Adults");
+    document.getElementById("sl_child_value").textContent = localStorage.getItem("SL Child");
+    document.getElementById("fr_adults_value").textContent = localStorage.getItem("Foreigner Adult");
+    document.getElementById("fr_child_value").textContent = localStorage.getItem("Foreigner Child");
+    document.getElementById("infant_value").textContent = localStorage.getItem("Infant");
+    
+    // Calculate and display the total price
+    var totalPrice = localStorage.getItem("totalPrice");
+    document.getElementById("total_price_value").textContent = "$" + totalPrice;
+
+        </script>
+        
+        <footer>
+          <div class="main-content">
+              <div class="left box">
+                <h2>About us</h2>
+                <div class="content">
+                  <p>From rehabilitation of injured sea turtles to providing a safe nesting ground, the sea turtle hatchery in Sri Lanka aims at protecting and saving the sea turtles that visit the golden shores of the island.</p>
+                  <div class="social">
+                    <a href="https://www.facebook.com/hikkaduwa.srilanka/" target="_blank"><div class="fb"><span class="fab fa-facebook-f"></span></div></a>
+                    <a href="#" target="_blank"><div class="twit"><span class="fab fa-twitter"></span></div></a>
+                    <a href="#"target="_blank"><div class="insta"><span class="fab fa-instagram"></span></div></a>
+                    <a href="#" target="_blank"><div class="yt"><span class="fab fa-youtube"></span></div></a>
+                  </div>
+                </div>
+              </div>
+              <div class="center box">
+                <h2>Address</h2>
+                <div class="content">
+                  <div class="place">
+                    <a href="https://goo.gl/maps/vpgTSLjT9Xscmrum6" target="_blank"><span id="loc" class="fas fa-map-marker-alt"></span></a>
+                    <span class="text">Hikkaduwa</span>
+                  </div>
+                  <div class="phone">
+                    <a href="#" target="_blank"><span id="ph" class="fas fa-phone-alt"></span></a>
+                    <span class="text">+094 123456789</span>
+                  </div>
+                  <div class="email">
+                    <a href="#" target="_blank"><span id="em" class="fas fa-envelope"></span></a>
+                    <span class="text">hikkaduwaturtlehatchery.gmail.com</span>
+                  </div>
+                </div>
+              </div>
+              <div class="right box">
+                <h2>Contact us</h2>
+                <div class="content">
+                  <form action="#">
+                    <div class="email">
+                      <div class="text">Your email</div>
+                      <input type="email" required>
+                    </div>
+                    <div class="msg">
+                      <div class="text">Comment us</div>
+                      <textarea rows="2" cols="25" required></textarea>
+                    </div>
+                    <div class="btn">
+                      <button type="submit">Send</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="bottom">
+              <center>
+                <span class="credit">Created By <a href="#">Chanuka Herath</a> |</span>
+                <span class="far fa-copyright"></span><span> 2023 All rights reserved.</span>
+              </center>
+            </div>
+      </footer>
+
+        <style>
+
+
+        </style>
+</body>
+</html>
